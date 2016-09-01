@@ -2,9 +2,6 @@
 var XMLfail = {
   "status": "fail"
 };
-function debug(x){ //Helping programmers since 1940 -- All rights reserved
-  console.log("bug on " + x);
-}
 //funcao para simplificar queries no document(HTML)
 //Similar ao $ do jQuery
 function _q(selector){
@@ -151,7 +148,6 @@ _q('#query').onkeyup = function(){// Alterando os filmes exibidos conforme alter
   }
   var movies = myJSON.data.movies;// Acessando os filmes que sao exibidos
   var pattern = this.value;//Pegando o valor que esta presente na input
-  //console.log(pattern); -- Another way to debug
   movies.forEach(function(movie){
     var thisMovie = _q(`#a${movie.id}`);
     if(!(new RegExp(pattern)).test(movie.title)){//verificando se o titulo do filme possui como parte dele
@@ -159,7 +155,6 @@ _q('#query').onkeyup = function(){// Alterando os filmes exibidos conforme alter
       thisMovie.style.display = "none";//Caso nao tenha deixa de exibir
     } else {
       thisMovie.style.display = "inline-block"; // Caso tenha exibi
-      //debug(110); -- Of course, this is the right way
     }
   });
 }

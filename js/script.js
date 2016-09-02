@@ -142,7 +142,7 @@ _q('#nextPage').addEventListener('click', function(){ // Tratamento de click no 
   this.disabled = (atualPage == 20)?true:false;//Desativando botao atual caso nao seja possivel incrementar a pagina de novo
   make_json();// Requisitando recarregar pagina
 });
-_q('#query').addEventListener('keyup',function(){// Alterando os filmes exibidos conforme alteracoes no input
+_q('#query').addEventListener('keyup', function(){// Alterando os filmes exibidos conforme alteracoes no input
   if(myJSON.status === "fail"){//Tratando erros
     clear_content(); // Limpando conteudo
     make_me_sad(); // Mandando Mensagem de erro

@@ -1,19 +1,43 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Movie List</title>
-    <link rel="stylesheet" href="css/master.css" media="screen" title="no title" charset="utf-8">
-  </head>
-  <body>
-    <div id="Content">
-      <button id="previousPage" type="button" name="button" disabled="true">Previous Page</button>
-      <input id="query" name="name" value="" onfocus="">
-      <button id="nextPage" type="button" name="button" >Next Page</button>
-      <div id="movies">
-
+<html lang="en">
+<head>
+  <title>Movie List</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+  <link rel="stylesheet" href="css/master.css" type="text/css" media="all">
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <div id="wrapper">
+    <nav class="top-nav">
+      <div class="shell"> <a href="#" class="nav-btn">HOMEPAGE<span></span></a> <span class="top-nav-shadow"></span>
+        <ul>
+          <li class="active"><span><a href="#">home</a></span></li>
+          <li><span><a href="#">services</a></span></li>
+          <li><span><a href="#">projects</a></span></li>
+          <li><span><a href="#">solutions</a></span></li>
+          <li><span><a href="#">jobs</a></span></li>
+          <li><span><a href="#">blog</a></span></li>
+          <li><span><a href="#">contacts</a></span></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="main"> <span class="shadow-top"></span>
+      <h1>Movie List</h1>
+      <div id="Content">
+        <button id="previousPage" type="button" name="button" disabled="true">Previous Page</button>
+        <input id="query" >
+        <button id="nextPage" type="button" name="button" >Next Page</button>
+        <div id="movies">
+        </div>
       </div>
     </div>
-    <script type="text/javascript" src="js/script.js"></script>
-  </body>
+    <div id="footer-push"></div>
+    <div class="footer-cols">
+    </div>
+    <div class="footer-bottom">
+    </div>
+  </div>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
 </html>

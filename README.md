@@ -7,7 +7,7 @@ Projeto para disciplina de Linguagem de Script.
 Movie_list, é uma aplicação com o objetivo de listagem de filmes.
 
 #Equipe
-Felipe Mota
+Felipe Mota <br>
 Felipe Medeiros
 
 

@@ -102,6 +102,7 @@ function make_me_sad(){// Para tratar erros
   badINFO.style = "text-align: center;";
   toLoad.appendChild(badINFO); // Colocando a Mensagem e a imagem no HTML
   toLoad.appendChild(unhappyIMG);
+  _q('#query').style.backgroundColor = "red";//Para o erro ficar mais claro
 }
 //funcao para carregar os dados do myJSON no HTML
 function load(){
@@ -111,6 +112,7 @@ function load(){
     make_me_sad();// Muito triste a situacao
     return; // Terminado execucao da funcao
   }
+  _q('#query').style.backgroundColor = "white";//Restabelecendo cor de fundo do input ja que nao houve erro
   var movies = myJSON.data.movies; // Pegando no JSON o Array que contem as informacoes sobre os filmes
   movies.forEach(function(movie){ // Adicionando cada filme ao HTML
     var div = document.createElement('div'); // Criacao de elementos
@@ -124,7 +126,7 @@ function load(){
     div.appendChild(title);// Adicionando elemento title ao elemento div
     div.style = "width:12%; height: 17%; display: inline-block;"; // Atribuindo estilo ao elemento div
     div.id = "a" + movie.id; // Atribuindo id a elemento div baseado no filme que ele possui
-    div.onclick = change; // Atribuindo funcao para quando ele for clickado
+    div.addEventListener('click', change); // Atribuindo funcao para quando ele for clickado
     toLoad.appendChild(div);// Adicionando elemento div ao HTML
   });
 }
@@ -146,6 +148,7 @@ _q('#query').addEventListener('keyup',function(){// Alterando os filmes exibidos
     make_me_sad(); // Mandando Mensagem de erro
     return; // Terminando execucao
   }
+  _q('#query').style.backgroundColor = "white";//Restabelecendo cor de fundo do input ja que nao houve erro
   var movies = myJSON.data.movies;// Acessando os filmes que sao exibidos
   var pattern = this.value;//Pegando o valor que esta presente na input
   movies.forEach(function(movie){

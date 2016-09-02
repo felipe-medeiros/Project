@@ -128,19 +128,19 @@ function load(){
     toLoad.appendChild(div);// Adicionando elemento div ao HTML
   });
 }
-_q('#previousPage').onclick = function(){// Tratamento de click no botao de Voltar Pagina
+_q('#previousPage').addEventListener('click',function(){// Tratamento de click no botao de Voltar Pagina
   atualPage--;// Decrementar pagina atual
   this.disabled = (atualPage == 1)?true:false;//Desativando botao atual caso nao seja possivel decrementar a pagina de novo
   _q('#nextPage').disabled = false; // Ativando botao de proxima pagina caso esteja desativado
   make_json(); // Requisitando recarregar pagina
-}
-_q('#nextPage').onclick = function(){ // Tratamento de click no botao de Avancar Pagina
+});
+_q('#nextPage').addEventListener('click', function(){ // Tratamento de click no botao de Avancar Pagina
   atualPage++;// Incrementar pagina atual
   _q('#previousPage').disabled = false; // Ativando botao de voltar pagina caso esteja desativado
   this.disabled = (atualPage == 20)?true:false;//Desativando botao atual caso nao seja possivel incrementar a pagina de novo
   make_json();// Requisitando recarregar pagina
-}
-_q('#query').onkeyup = function(){// Alterando os filmes exibidos conforme alteracoes no input
+});
+_q('#query').addEventListener('keyup',function(){// Alterando os filmes exibidos conforme alteracoes no input
   if(myJSON.status === "fail"){//Tratando erros
     clear_content(); // Limpando conteudo
     make_me_sad(); // Mandando Mensagem de erro
@@ -157,4 +157,4 @@ _q('#query').onkeyup = function(){// Alterando os filmes exibidos conforme alter
       thisMovie.style.display = "inline-block"; // Caso tenha exibi
     }
   });
-}
+});
